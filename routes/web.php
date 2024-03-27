@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Principal');
 });
+Route::get('/registrar-partida', function () {return view('partida.registrar');})->name('registrar-partida');

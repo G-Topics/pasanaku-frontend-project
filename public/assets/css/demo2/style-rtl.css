@@ -2084,7 +2084,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: #d0d6e1;
-  background-color: #0c1427;
+  background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #172340;
   appearance: none;
@@ -2108,7 +2108,7 @@ progress {
 .form-control:focus, .typeahead.tt-input:focus,
 .typeahead.tt-hint:focus, .select2-container--default .select2-search--dropdown .select2-search__field:focus {
   color: #d0d6e1;
-  background-color: #0c1427;
+  background-color: #fff;
   border-color: #243866;
   outline: 0;
   box-shadow: none;

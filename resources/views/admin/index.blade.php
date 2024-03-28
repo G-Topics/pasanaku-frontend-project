@@ -2,7 +2,7 @@
 @section('admin')
     <div class="page-content">
 
-        @if (isset($message) != null)
+        @if (isset($message) )
             <tr>
                 <div>{{ $message }}</div>
             </tr>

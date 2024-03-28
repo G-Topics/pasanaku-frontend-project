@@ -1,7 +1,7 @@
 @extends('admin.principal')
 @section('admin')
 
-    @if (isset($message) != null)
+    @if (isset($message))
         <tr>
             <div>{{ $message }}</div>
         </tr>

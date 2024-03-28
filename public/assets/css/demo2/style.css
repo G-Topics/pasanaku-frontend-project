@@ -91,7 +91,7 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
+  color: #1E562A;
   text-align: var(--bs-body-text-align);
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
@@ -278,7 +278,7 @@ kbd {
   padding: 0.1875rem 0.375rem;
   font-size: 0.875em;
   color: var(--bs-body-bg);
-  background-color: var(--bs-body-color);
+  background-color: var(--bs-white);
   border-radius: 0.25rem;
 }
 kbd kbd {
@@ -2085,8 +2085,8 @@ progress {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #d0d6e1;
-  background-color: #0c1427;
+  color: var(--bs-secondary);
+  background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #172340;
   appearance: none;
@@ -2109,8 +2109,8 @@ progress {
 }
 .form-control:focus, .typeahead.tt-input:focus,
 .typeahead.tt-hint:focus, .select2-container--default .select2-search--dropdown .select2-search__field:focus {
-  color: #d0d6e1;
-  background-color: #0c1427;
+  color: #272728;
+  background-color: #ffffff;
   border-color: #243866;
   outline: 0;
   box-shadow: none;
@@ -2972,6 +2972,18 @@ textarea.is-invalid.typeahead.tt-hint, .select2-container--default .select2-sear
   --bs-btn-disabled-bg: #6571ff;
   --bs-btn-disabled-border-color: #6571ff;
 }
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1E562A;
+  color: #FFFFFF;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 
 .btn-secondary, div.tox .tox-button--secondary {
   --bs-btn-color: #fff;

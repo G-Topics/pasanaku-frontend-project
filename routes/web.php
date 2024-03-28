@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PartidaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin.index');
 });
+Route::get('/registrar-partida', function () {return view('partida.registrar');})->name('registrar-partida');
+Route::post('/partida/registrar', [PartidaController::class, 'consumir']);

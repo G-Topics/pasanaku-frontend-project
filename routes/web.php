@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PartidaController;
 /*
@@ -13,8 +14,6 @@ use App\Http\Controllers\PartidaController;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.index');
-});
+Route::get('/', [MainController::class, 'index']);
 Route::get('/registrar-partida', function () {return view('partida.registrar');})->name('registrar-partida');
 Route::post('/partida/registrar', [PartidaController::class, 'consumir']);

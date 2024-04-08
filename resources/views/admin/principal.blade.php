@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <!-- End fonts -->
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> --}}
 	<!-- core:css -->
 	<link rel="stylesheet" href="{{asset('../assets/vendors/core/core.css')}}">
 	<!-- endinject -->
@@ -25,7 +25,7 @@
 	<!-- Plugin css for this page -->
 	<link rel="stylesheet" href="{{asset('../assets/vendors/flatpickr/flatpickr.min.css')}}">
 	<!-- End plugin css for this page -->
-
+      
 	<!-- inject:css -->
 	<link rel="stylesheet" href="{{asset('../assets/fonts/feather-font/css/iconfont.css')}}">
 	<link rel="stylesheet" href="{{asset('../assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
@@ -258,7 +258,17 @@
 
 	<!-- Custom js for this page -->
   <script src="{{ asset('../assets/js/dashboard-dark.js') }}"></script>
+
+	<!-- Plugin js for this page -->
+  <script src="{{ asset('../assets/vendors/datatables.net/jquery.dataTables.js')}}"></script>
+  <script src="{{ asset('../assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js')}}"></script>
+	<!-- End plugin js for this page -->
+
+
+	<!-- Custom js for this page -->
+  <script src="{{ asset('../assets/js/data-table.js')}}"></script>
 	<!-- End custom js for this page -->
+
 
 </body>
 </html>    

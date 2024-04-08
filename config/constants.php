@@ -1,0 +1,1 @@
+<?php return [ 'JUGADOR' => '1', 'OWT_KEY' =>'xxxxx-xxxx', 'OWT_SECRET' => 'xxxxxxx-xxxxxx-xxxx' ];

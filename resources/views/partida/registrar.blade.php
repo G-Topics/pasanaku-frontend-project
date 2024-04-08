@@ -1,6 +1,5 @@
 @extends('admin.principal')
 @section('admin')
-
     @if (isset($message))
         <tr>
             <div>{{ $message }}</div>
@@ -14,7 +13,7 @@
                     Registrar Partida
                 </h1>
 
-                <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{ url('/partida/registrar') }}">
+                <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{ url('/') }}">
                     @csrf
                     <div class="form-group">
                         <div class="row g-3 mt-4">
@@ -25,7 +24,7 @@
 
                             <div class="col-md-6">
                                 <label for="frecuencia">Frecuencia</label>
-                                <select name="frecuencia" id="frecuencia" class="form-control">
+                                <select name="frecuencia" id="frecuencia" class="form-select">
                                     <option value="Mensual">Mensual</option>
                                     <option value="Semanal">Semanal</option>
                                 </select>
@@ -43,16 +42,21 @@
                                     required="">
                             </div>
 
-                            <div class="col-md-5 mt-4">
+                            <div class="col-md-4 mt-4">
                                 <label for="monto">Monto</label>
                                 <input type="text" id="monto" name="monto" class="form-control" required="">
                             </div>
 
-                            <div class="col-md-1 mt-4">
+                            <div class="col-md-2 mt-4">
                                 <label for="id_moneda"> SM</label>
-                                <select name="id_moneda" id="id_moneda" class="form-control">
-                                    <option value="1">BOB</option>
-                                    <option value="2">$</option>
+                                <select name="id_moneda" id="id_moneda" class="form-select">
+
+
+                                    @foreach ($monedas as $moneda)
+                                        <option value="{{ $moneda['id'] }}" @selected(old('id_moneda') == $moneda['id'])>
+                                            {{ $moneda['s_monetario'] }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
 
@@ -69,11 +73,11 @@
                         </div>
 
 
-                        <div class="d-grid gap-2 col-4 mx-auto mt-5">
-                            <div class="col">
-                                <button type="button" class="btn btn-danger ml-3 mr-20">Cancelar</button>
-                                <button type="submit" class="btn btn-success ml-5">Crear</button>
-                            </div>
+                        <div class="d-flex justify-content-around mt-4">
+
+                            <a href="{{ route('/') }}" class="btn btn-secondary">Cancelar</a>
+                            <button type="submit" class="btn btn-primary ">Crear</button>
+
                         </div>
                 </form>
             </div>

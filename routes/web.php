@@ -3,6 +3,7 @@
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PartidaController;
+use App\Http\Controllers\InvitacionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,12 @@ use App\Http\Controllers\PartidaController;
 |
 */
 
-Route::get('/', [MainController::class, 'index']);
-Route::get('/registrar-partida', function () {return view('partida.registrar');})->name('registrar-partida');
-Route::post('/partida/registrar', [PartidaController::class, 'consumir']);
+Route::get('/', [MainController::class, 'index'])->name('/');
+Route::get('/registrar-partida', [MainController::class, 'registrarPartida'])->name('registrar-partida');
+Route::get('/registrar-invitacion/{id_partida}', [MainController::class, 'registrarInvitacion'])->name('registrar-invitacion');
+
+
+
+Route::post('/', [PartidaController::class, 'consumir']);
+Route::post('/registrar-invitacion/{id_partida}', [InvitacionController::class, 'anadir']);
+Route::delete('/registrar-invitacion/{id_partida}', [InvitacionController::class, 'eliminar'])->name('eliminar-invitacion');

@@ -2236,11 +2236,11 @@ textarea.form-control-lg {
   width: 100%;
   padding: 0.469rem 2.4rem 0.469rem 0.8rem;
   -moz-padding-start: calc(0.8rem - 3px);
-  font-size: 0.875rem;
+  font-size: 0.76rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #d0d6e1;
-  background-color: #0c1427;
+  color: #000;
+  background-color: #fff;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23212a3a' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 0.8rem center;
@@ -2894,7 +2894,7 @@ textarea.is-invalid.typeahead.tt-hint, .select2-container--default .select2-sear
   --bs-btn-font-size: 0.875rem;
   --bs-btn-font-weight: 400;
   --bs-btn-line-height: 1.5;
-  --bs-btn-color: #d0d6e1;
+  
   --bs-btn-bg: transparent;
   --bs-btn-border-width: 1px;
   --bs-btn-border-color: transparent;
@@ -2915,7 +2915,7 @@ textarea.is-invalid.typeahead.tt-hint, .select2-container--default .select2-sear
   user-select: none;
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: var(--bs-btn-border-radius);
-  background-color: var(--bs-btn-bg);
+  
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2961,7 +2961,7 @@ textarea.is-invalid.typeahead.tt-hint, .select2-container--default .select2-sear
   --bs-btn-bg: #6571ff;
   --bs-btn-border-color: #6571ff;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #5660d9;
+  --bs-btn-hover-bg: #2f6933;
   --bs-btn-hover-border-color: #515acc;
   --bs-btn-focus-shadow-rgb: 124, 134, 255;
   --bs-btn-active-color: #fff;
@@ -2971,6 +2971,7 @@ textarea.is-invalid.typeahead.tt-hint, .select2-container--default .select2-sear
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #6571ff;
   --bs-btn-disabled-border-color: #6571ff;
+  background-color: #1E562A;
 }
 
 .button {
@@ -3000,6 +3001,7 @@ textarea.is-invalid.typeahead.tt-hint, .select2-container--default .select2-sear
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #7987a1;
   --bs-btn-disabled-border-color: #7987a1;
+  background-color: #3A483D;
 }
 
 .btn-success {
@@ -4347,7 +4349,7 @@ div.tox .btn-group-vertical > .btn-group:not(:first-child) > .tox-button,
   --bs-card-title-spacer-y: 0.875rem;
   --bs-card-border-width: 1px;
   --bs-card-border-color: #172340;
-  --bs-card-border-radius: 0.25rem;
+  --bs-card-border-radius: 0.5rem;
   --bs-card-box-shadow: 3px 0 10px 0 #060b15;
   --bs-card-inner-border-radius: calc(0.25rem - 1px);
   --bs-card-cap-padding-y: 0.875rem;
@@ -4365,7 +4367,7 @@ div.tox .btn-group-vertical > .btn-group:not(:first-child) > .tox-button,
   min-width: 0;
   height: var(--bs-card-height);
   word-wrap: break-word;
-  background-color: var(--bs-card-bg);
+  background-color: var(--bs-white);
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
@@ -4694,22 +4696,22 @@ div.tox .btn-group-vertical > .btn-group:not(:first-child) > .tox-button,
   --bs-pagination-padding-x: 1rem;
   --bs-pagination-padding-y: 0.469rem;
   --bs-pagination-font-size: 0.875rem;
-  --bs-pagination-color: #6571ff;
-  --bs-pagination-bg: #0c1427;
+  --bs-pagination-color: #fff;
+  --bs-pagination-bg: #1E562A;
   --bs-pagination-border-width: 1px;
   --bs-pagination-border-color: #172340;
   --bs-pagination-border-radius: 0.25rem;
   --bs-pagination-hover-color: var(--bs-link-hover-color);
-  --bs-pagination-hover-bg: #18284e;
+  --bs-pagination-hover-bg: #3A483D;
   --bs-pagination-hover-border-color: #18284e;
   --bs-pagination-focus-color: var(--bs-link-hover-color);
-  --bs-pagination-focus-bg: #18284e;
+  --bs-pagination-focus-bg: #3A483D;
   --bs-pagination-focus-box-shadow: none;
   --bs-pagination-active-color: #fff;
-  --bs-pagination-active-bg: #6571ff;
+  --bs-pagination-active-bg: #3A483D;
   --bs-pagination-active-border-color: #6571ff;
-  --bs-pagination-disabled-color: #41516c;
-  --bs-pagination-disabled-bg: #0c1427;
+  --bs-pagination-disabled-color: #fff;
+  --bs-pagination-disabled-bg: #3A483D;
   --bs-pagination-disabled-border-color: #172340;
   display: flex;
   padding-left: 0;
@@ -4747,7 +4749,7 @@ div.tox .btn-group-vertical > .btn-group:not(:first-child) > .tox-button,
 .page-link.active, .active > .page-link {
   z-index: 3;
   color: var(--bs-pagination-active-color);
-  background-color: var(--bs-pagination-active-bg);
+  background-color: #3A483D;
   border-color: var(--bs-pagination-active-border-color);
 }
 .page-link.disabled, .disabled > .page-link {
@@ -8122,7 +8124,7 @@ div.tox .btn-group-vertical > .btn-group:not(:first-child) > .tox-button,
 /* rtl:end:remove */
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: #064E1F !important; 
 }
 
 .text-secondary {
@@ -19027,8 +19029,8 @@ svg.icon-xl {
 }
 
 svg.icon-xxl {
-  width: 40px;
-  height: 40px;
+  width: 5rem;
+  height: 5rem;
 }
 
 .icon-xs {
@@ -20449,7 +20451,7 @@ a.badge:hover {
   justify-content: center;
 }
 .btn.btn-icon svg, .wizard > .actions a.btn-icon svg, div.tox .btn-icon.tox-button svg, .swal2-popup .swal2-actions button.btn-icon svg, .fc .btn-icon.fc-button-primary svg {
-  height: 18px;
+  
 }
 .btn.btn-icon.btn-xs, .wizard > .actions a.btn-icon.btn-xs, div.tox .btn-icon.btn-xs.tox-button, .swal2-popup .swal2-actions button.btn-icon.btn-xs, .fc .btn-icon.btn-xs.fc-button-primary {
   width: 30px;
@@ -21255,7 +21257,7 @@ div.tox .btn-group-lg > .btn-icon-text.tox-button .btn-icon-append,
   font-weight: 500;
   font-size: 12px;
   text-transform: uppercase;
-  color: #7987a1;
+  color: #000;
 }
 .table thead th i {
   margin-left: 0.325rem;
@@ -21263,6 +21265,7 @@ div.tox .btn-group-lg > .btn-icon-text.tox-button .btn-icon-append,
 .table th,
 .table td {
   white-space: nowrap;
+  color: #000;
 }
 .table td img {
   width: 36px;

@@ -27,8 +27,20 @@ class PartidaController extends Controller
         $status = $jsonResponse['status'];
 
 
-        if ($status=='success')
-            return view('admin.index')->with('message', $jsonResponse['message']);    
+        if ($status=='success'){
+            
+            $partida =  $jsonResponse['data']['id'];
+            $dataParticipante = [
+                'ci_jugador' => config('constants.JUGADOR'),
+                'id_rol' => 1,
+                'id_partida' => $partida,
+            ];
+            $responseParticipante = Http::post('http://127.0.0.1:8000/api/participantes', $dataParticipante);
+            Log::info($responseParticipante);
+            
+            return redirect()->route('/');       
+        }
+         
         return view('partida.registrar')->with('message', $jsonResponse['message']);
     }
 }

@@ -83,20 +83,7 @@
                                                     <td>{{ $invitacion['nombre_estado'] }}</td>
 
                                                     <td>
-                                                        @if ($invitacion['nombre_estado'] == 'Enviado')
-                                                            <div class="d-flex flex-row justify-content-around">
-                                                                <a href=""
-                                                                    class="btn btn-secondary btn-icon border-0 disabled"><i
-                                                                        data-feather="edit-2"></i></a>
-                                                                <a href=""
-                                                                    class="btn btn-secondary btn-icon border-0 disabled"><i
-                                                                        data-feather="trash-2"></i></a>
-                                                                <a href=""
-                                                                    class="btn btn-secondary btn-icon border-0 disabled"><i
-                                                                        data-feather="mail"></i></a>
-                                                            </div>
-                                                        @else
-                                                            <div class="d-flex flex-row justify-content-around">
+                                                        <div class="d-flex flex-row justify-content-around">
                                                                 <a class="btn btn-primary btn-icon border-0 show_user_details"
                                                                     data-bs-toggle="modal" data-bs-target="#editModal"
                                                                     data-id="{{ $invitacion['id'] }}"
@@ -118,8 +105,6 @@
                                                                     id={{ $invitacion['id'] }}><i data-feather="mail"></i>
                                                                 </a>
                                                             </div>
-                                                        @endif
-
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -157,7 +142,7 @@
             function anadirInvitacion() {
                 $.ajax({
                     type: "POST",
-                    url: 'http://127.0.0.1:8000/api/invitaciones/',
+                    url: 'http://3.137.171.204/api/invitaciones/',
                     data: '_method=DELETE&_token=' + _token,
                     success: function(result) {
                         console.log(result);
@@ -167,7 +152,7 @@
             };
             $(document).on('click', '.delete-invitacion', function() {
                 var id = $(this).data('id');
-                var userURL = 'http://127.0.0.1:8000/api/invitaciones/' + id;
+                var userURL = 'http://3.137.171.204/api/invitaciones/' + id;
                 var trObj = $(this);
                 var id_partida = $("#id_partida").val();
                 if (confirm("¿Está seguro de eliminar la invitación?")) {
@@ -192,7 +177,7 @@
                 var id = $(this).data('id');
                 var trObj = $(this);
                 var id_partida = $("#id_partida").val();
-                var userURL = 'http://127.0.0.1:8000/api/invitaciones/delete-partida/' + id_partida;
+                var userURL = 'http://3.137.171.204/api/invitaciones/delete-partida/' + id_partida;
                 if (confirm("¿Está seguro de eliminar las invitaciones No enviadas y En espera?")) {
                     $.ajax({
                         url: userURL,
@@ -230,7 +215,7 @@
 
                 var id = $(this).data('id');
                 console.log(id);
-                var userURL = 'http://127.0.0.1:8000/api/invitaciones/send/' + id;
+                var userURL = 'http://3.137.171.204/api/invitaciones/send/' + id;
                 var trObj = $(this);
                 var id_partida = $("#id_partida").val();
 
@@ -255,7 +240,7 @@
 
                 var id_partida = $("#id_partida").val();
                 console.log(id_partida);
-                var userURL = 'http://127.0.0.1:8000/api/invitaciones/send-todos/' + id_partida;
+                var userURL = 'http://3.137.171.204/api/invitaciones/send-todos/' + id_partida;
                 var trObj = $(this);
 
 

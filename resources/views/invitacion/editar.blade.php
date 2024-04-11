@@ -60,7 +60,7 @@
             var email = document.getElementById("Editaremail").value;
 
             console.log(id_partida);
-            var userURL = 'http://127.0.0.1:8000/api/invitaciones/' + id;
+            var userURL = 'http://3.137.171.204/api/invitaciones/' + id;
             
             
 

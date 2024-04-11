@@ -21,7 +21,7 @@ class PartidaController extends Controller
             'capacidad' => $request->input('capacidad'),
             'multa' => $request->input('multa'),
         ];
-        $response = Http::post('http://127.0.0.1:8000/api/partidas', $data);
+        $response = Http::post('http://3.137.171.204/api/partidas', $data);
 
         $jsonResponse = $response->json();
         $status = $jsonResponse['status'];
@@ -35,7 +35,7 @@ class PartidaController extends Controller
                 'id_rol' => 1,
                 'id_partida' => $partida,
             ];
-            $responseParticipante = Http::post('http://127.0.0.1:8000/api/participantes', $dataParticipante);
+            $responseParticipante = Http::post('http://3.137.171.204/api/participantes', $dataParticipante);
             Log::info($responseParticipante);
             
             return redirect()->route('/');       

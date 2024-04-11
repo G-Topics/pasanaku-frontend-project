@@ -11,7 +11,7 @@ class MainController extends Controller
     public function index()
     {
         // session(['user_id'=>$_ENV('USER_ID')]);
-        $consulta = 'http://127.0.0.1:8000/api/jugadores/' . env('USER_ID') . '/partidas';
+        $consulta = 'http://127.0.0.1:8000/api/jugadores/partidas/'.env('USER_ID');
 
         Log::info('respuesta: ' . $consulta);
         $response = Http::get($consulta);

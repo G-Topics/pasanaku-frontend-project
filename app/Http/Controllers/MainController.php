@@ -16,7 +16,7 @@ class MainController extends Controller
         
         $response = Http::get($consulta);
         $jsonResponse = $response->json();
-        $participaciones = isset($jsonResponse['data']) ? $jsonResponse['data']['original'] : [];
+        $participaciones = isset($jsonResponse['data']) ? $jsonResponse['data'] : [];
         Log::info('respuesta: ' . json_encode($participaciones));
         
  

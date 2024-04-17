@@ -21,7 +21,7 @@
                     <div class="card card-clickable">
                         <div class="card-body">
                             <h4 class="card-title">Partida: {{ $participacion['partida']['nombre'] }}</h4>
-                            <p class="card-text">Descripcion: {{substr($participacion['partida']['descripcion'], 0,  35)  }} ... </p>
+                            <p class="card-text">Descripcion: {{substr($participacion['partida']['descripcion'], 0,  30)  }} ... </p>
                             
                             <p class="card-text">Fecha de Inicio: {{ $participacion['partida']['fecha_inicio'] }}</p>
                             <div class="d-flex flex-row-reverse">                                

@@ -24,3 +24,4 @@ Route::get('/registrar-invitacion/{id_partida}', [MainController::class, 'regist
 Route::post('/', [PartidaController::class, 'consumir']);
 Route::post('/registrar-invitacion/{id_partida}', [InvitacionController::class, 'anadir']);
 Route::delete('/registrar-invitacion/{id_partida}', [InvitacionController::class, 'eliminar'])->name('eliminar-invitacion');
+Route::get('/detalles-partida/{id_partida}', [PartidaController::class, 'detalles'])->name('detalles-partida');

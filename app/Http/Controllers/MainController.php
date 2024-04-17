@@ -13,11 +13,14 @@ class MainController extends Controller
         // session(['user_id'=>$_ENV('USER_ID')]);
         $consulta = 'http://127.0.0.1:8000/api/jugadores/partidas/'.env('USER_ID');
 
-        Log::info('respuesta: ' . $consulta);
+        
         $response = Http::get($consulta);
         $jsonResponse = $response->json();
-        $partidas = isset($jsonResponse) ? $jsonResponse : [];
-        return view('admin.index', ['partidas' => $partidas]);
+        $participaciones = isset($jsonResponse['data']) ? $jsonResponse['data']['original'] : [];
+        Log::info('respuesta: ' . json_encode($participaciones));
+        
+ 
+        return view('admin.index', ['participaciones' => $participaciones]);
     }
 
     public function registrarPartida()

@@ -34,7 +34,7 @@
                                 <label for="fecha_inicio">Fecha de Inicio</label>
                                 <input type="date" id="c" name="fecha_inicio" class="form-control"
                                     required="">
-                            </div>
+                            </div>  
 
                             <div class="col-md-6 mt-4">
                                 <label for="descripcion">Descripcion</label>
@@ -69,13 +69,16 @@
                                 <input type="double" id="multa" name="multa" class="form-control" required="">
                             </div>
 
-
+                            <div class="col-md-6 mt-4">
+                                <label for="duracion_oferta">Duracion(horas)</label>
+                                <input type="number" id="duracion_oferta" name="duracion_oferta" class="form-control" required="">
+                            </div>
                         </div>
 
 
                         <div class="d-flex justify-content-around mt-4">
 
-                            <a href="{{ route('/') }}" class="btn btn-secondary">Cancelar</a>
+                            <a href="{{ route('/') }}" class="btn btn-secondary">Atras</a>
                             <button type="submit" class="btn btn-primary ">Crear</button>
 
                         </div>

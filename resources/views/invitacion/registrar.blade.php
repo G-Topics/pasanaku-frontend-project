@@ -83,6 +83,19 @@
                                                     <td>{{ $invitacion['nombre_estado'] }}</td>
 
                                                     <td>
+                                                        @if ($invitacion['nombre_estado'] == 'Aceptado')
+                                                            <div class="d-flex flex-row justify-content-around">
+                                                                <a href=""
+                                                                    class="btn btn-secondary btn-icon border-0 disabled"><i
+                                                                        data-feather="edit-2"></i></a>
+                                                                <a href=""
+                                                                    class="btn btn-secondary btn-icon border-0 disabled"><i
+                                                                        data-feather="trash-2"></i></a>
+                                                                <a href=""
+                                                                    class="btn btn-secondary btn-icon border-0 disabled"><i
+                                                                        data-feather="mail"></i></a>
+                                                            </div>
+                                                        @else
                                                             <div class="d-flex flex-row justify-content-around">
                                                                 <a class="btn btn-primary btn-icon border-0 show_user_details"
                                                                     data-bs-toggle="modal" data-bs-target="#editModal"
@@ -105,6 +118,8 @@
                                                                     id={{ $invitacion['id'] }}><i data-feather="mail"></i>
                                                                 </a>
                                                             </div>
+                                                        @endif
+
                                                     </td>
                                                 </tr>
                                             @endforeach

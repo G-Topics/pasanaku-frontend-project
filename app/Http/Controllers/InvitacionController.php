@@ -51,4 +51,6 @@ class InvitacionController extends Controller
         Log::info($response);
         
     }
+
+
 }

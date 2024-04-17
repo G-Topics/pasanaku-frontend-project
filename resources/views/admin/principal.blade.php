@@ -248,6 +248,7 @@
 
 	<!-- Plugin js for this page -->
   <script src="{{ asset('../assets/vendors/flatpickr/flatpickr.min.js') }}"></script>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
   <script src="{{ asset('../assets/vendors/apexcharts/apexcharts.min.js') }}"></script>
 	<!-- End plugin js for this page -->
 

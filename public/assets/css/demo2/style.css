@@ -172,6 +172,7 @@ address {
 ol,
 ul {
   padding-left: 2rem;
+  list-style-type: none; 
 }
 
 ol,
@@ -5426,7 +5427,7 @@ div.tox .btn-group-vertical > .btn-group:not(:first-child) > .tox-button,
   --bs-modal-padding: 1rem;
   --bs-modal-margin: 0.5rem;
   --bs-modal-color: ;
-  --bs-modal-bg: #0c1427;
+  --bs-modal-bg: #BECDB5;
   --bs-modal-border-color: #172340;
   --bs-modal-border-width: 1px;
   --bs-modal-border-radius: 0.5rem;
@@ -21780,7 +21781,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-
 }
 
 .flatpickr-calendar {
-  background-color: #060c17;
+  background-color: #fff;
   border: 1px solid #172340;
   box-shadow: 0 0 10px 0 #060b15;
 }
@@ -21818,7 +21819,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-
 .flatpickr-day.selected.nextMonthDay,
 .flatpickr-day.startRange.nextMonthDay,
 .flatpickr-day.endRange.nextMonthDay {
-  background: #6571ff;
+  background: #1E562A;
   border-color: #6571ff;
 }
 
@@ -21888,7 +21889,7 @@ span.flatpickr-weekday {
 }
 
 .flatpickr-day {
-  color: #d0d6e1;
+  color: #1E562A;
 }
 
 .flatpickr-day.today {
@@ -21935,7 +21936,7 @@ span.flatpickr-weekday {
 .flatpickr-time input,
 .flatpickr-time .flatpickr-time-separator,
 .flatpickr-time .flatpickr-am-pm {
-  color: #d0d6e1;
+  color: #000;
 }
 
 .flatpickr-time .numInputWrapper span.arrowUp:after {
@@ -22611,3 +22612,11 @@ div.tox .tox-dialog__body {
   width: 100%;
 }
 /*# sourceMappingURL=../maps/demo2/style.css.map */
+.custom-span{
+  font-weight: lighter;
+  color: black;
+}
+
+#tableParticipantes{
+  border-radius: 1rem;
+}

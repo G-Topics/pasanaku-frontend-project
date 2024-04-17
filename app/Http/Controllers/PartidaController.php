@@ -20,6 +20,7 @@ class PartidaController extends Controller
             'id_moneda' => $request->input('id_moneda'),
             'capacidad' => $request->input('capacidad'),
             'multa' => $request->input('multa'),
+            'duracion_oferta' => $request->input('duracion_oferta'),
         ];
         $response = Http::post('http://127.0.0.1:8000/api/partidas', $data);
 
@@ -42,6 +43,18 @@ class PartidaController extends Controller
         }
          
         return view('partida.registrar')->with('message', $jsonResponse['message']);
+    }
+
+    public function detalles($id)
+    {
+        $consulta = 'http://127.0.0.1:8000/api/detalles-partida/'.$id;
+
+        Log::info('respuesta: ' . $consulta);
+        $response = Http::get($consulta);
+        $jsonResponse = $response->json();
+        Log::info('respuesta: ' . json_encode($jsonResponse));
+        $detalles = isset($jsonResponse['data']) ? $jsonResponse['data'] : [];
+        return view('partida.detalles', ['detalles' => $detalles]);
     }
 }
 

@@ -32,7 +32,7 @@ class PartidaController extends Controller
             
             $partida =  $jsonResponse['data']['id'];
             $dataParticipante = [
-                'ci_jugador' => config('constants.JUGADOR'),
+                'ci_jugador' => env('USER_ID'),
                 'id_rol' => 1,
                 'id_partida' => $partida,
             ];

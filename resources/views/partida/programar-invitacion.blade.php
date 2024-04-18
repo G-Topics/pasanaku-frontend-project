@@ -49,16 +49,20 @@
         });
 
 
-        var select = document.querySelector('#establecer');
-        $(document).ready(function() {
-            calendar.setDate(document.getElementById("Editarfecha_inicio").value, true, "");
+        var select = document.querySelector('#establecer'); 
+
+        $('#editModal').on('shown.bs.modal', function() {
+            var fechaInicio = new Date($("#Editarfecha_inicio").val());
+            calendar.setDate(fechaInicio, true, "");
         });
+
 
         select.addEventListener('change', function() {
             var selectedValue = this.value;
             switch (selectedValue) {
                 case '1':
-                    calendar.setDate(document.getElementById("Editarfecha_inicio").value, true, "");
+                    var fechaInicio = new Date(document.getElementById("Editarfecha_inicio").value);
+                    calendar.setDate(fechaInicio, true, "");
                     break;
                 case '2':
 
@@ -67,7 +71,6 @@
                     calendar.setDate(new Date(), true, "");
                     break;
                 default:
-                    // Acción predeterminada si no coincide con ningún caso
                     break;
             }
         });
@@ -106,8 +109,7 @@
                 success: function(response) {
                     console.log(response);
                     // Aquí puedes actualizar los datos de la tabla
-                    window.location.href =
-                        "http://localhost:8001/detalles-partida/" + 1;
+                    location.reload();
                 },
             });
 

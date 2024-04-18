@@ -83,7 +83,7 @@
                                                     <td>{{ $invitacion['nombre_estado'] }}</td>
 
                                                     <td>
-                                                        @if ($invitacion['nombre_estado'] == 'Aceptado')
+                                                        @if ($invitacion['nombre_estado'] == 'Aceptada')
                                                             <div class="d-flex flex-row justify-content-around">
                                                                 <a href=""
                                                                     class="btn btn-secondary btn-icon border-0 disabled"><i
@@ -177,9 +177,7 @@
                         dataType: 'json',
                         success: function(response) {
                             console.log(response);
-                            // Aquí puedes actualizar los datos de la tabla
-                            window.location.href =
-                                "http://localhost:8001/registrar-invitacion/" + id_partida;
+                            location.reload();
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
                             console.log("Error en la solicitud AJAX:", textStatus, errorThrown);
@@ -200,9 +198,7 @@
                         dataType: 'json',
                         success: function(response) {
                             console.log(response);
-                            // Aquí puedes actualizar los datos de la tabla
-                            window.location.href =
-                                "http://localhost:8001/registrar-invitacion/" + id_partida;
+                            location.reload();
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
                             console.log("Error en la solicitud AJAX:", textStatus, errorThrown);
@@ -241,8 +237,7 @@
                     success: function(response) {
                         console.log(response);
                         // Aquí puedes actualizar los datos de la tabla
-                        window.location.href =
-                            "http://localhost:8001/registrar-invitacion/" + id_partida;
+                        location.reload();
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.log("Error en la solicitud AJAX:", textStatus, errorThrown);
@@ -264,10 +259,7 @@
                     type: 'POST',
                     dataType: 'json',
                     success: function(response) {
-                        console.log(response);
-                        // Aquí puedes actualizar los datos de la tabla
-                        window.location.href =
-                            "http://localhost:8001/registrar-invitacion/" + id_partida;
+                        location.reload();
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         console.log("Error en la solicitud AJAX:", textStatus, errorThrown);

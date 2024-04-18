@@ -11,6 +11,7 @@ use Illuminate\Http\Client\PendingRequest;
 class PartidaController extends Controller
 {
     public function consumir( Request $request ){
+        
         $data = [
             'nombre' => $request->input('nombre'),
             'frecuencia' => $request->input('frecuencia'),
@@ -47,14 +48,22 @@ class PartidaController extends Controller
 
     public function detalles($id)
     {
-        $consulta = 'http://127.0.0.1:8000/api/detalles-partida/'.$id;
+        $consultaRol = 'http://127.0.0.1:8000/api/participante/partida-jugador/'.$id.'/'.env('USER_ID');
+        Log::info('rol: ' . $consultaRol);
+        $responseRol = Http::get($consultaRol);
+        $jsonResponseRol = $responseRol->json();
+        Log::info('rol: ' . json_encode($jsonResponseRol));
+        $rol = isset($jsonResponseRol['data']) ? $jsonResponseRol['data'] : [];
 
+        $consulta = 'http://127.0.0.1:8000/api/detalles-partida/'.$id;
+    
         Log::info('respuesta: ' . $consulta);
         $response = Http::get($consulta);
         $jsonResponse = $response->json();
         Log::info('respuesta: ' . json_encode($jsonResponse));
         $detalles = isset($jsonResponse['data']) ? $jsonResponse['data'] : [];
-        return view('partida.detalles', ['detalles' => $detalles]);
+        $numeroParticipantes = count($detalles['participantes']);
+        return view('partida.detalles', ['detalles' => $detalles, 'rol'=> $rol, 'numeroParticipantes' =>$numeroParticipantes]);
     }
 }
 

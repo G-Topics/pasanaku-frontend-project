@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use Carbon\Carbon;
+
 
 class InvitacionController extends Controller
 {
     public function anadir(Request $request)
     {
         $data = [
-            'fecha' =>   Carbon::now(),
+            'fecha' =>  date("Y-m-d H:i:s"),
             'nombre' => $request->input('nombre'),
             'telefono' => $request->input('telefono'),
             'email' => $request->input('email'),
@@ -31,7 +31,7 @@ class InvitacionController extends Controller
 
 
             $dataDetalleInvitacion = [
-                'fecha' =>  $date = Carbon::now(),
+                'fecha' => date("Y-m-d H:i:s"),
                 'id_estado_invitacion' => 3,
                 'id_invitacion' => $invitacion,
 

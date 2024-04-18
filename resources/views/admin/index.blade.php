@@ -25,7 +25,9 @@
                             
                             <p class="card-text">Fecha de Inicio: {{ $participacion['partida']['fecha_inicio'] }}</p>
                             <div class="d-flex flex-row-reverse">                                
-                                <a href="{{ route('registrar-invitacion', ['id_partida' => $participacion['partida']['id']]) }}" class="btn btn-icon border-0"><i data-feather="user-plus"></i></a>
+                                @if ($participacion['id_rol']==1)
+                                    <a href="{{ route('registrar-invitacion', ['id_partida' => $participacion['partida']['id']]) }}" class="btn btn-icon border-0"><i data-feather="user-plus"></i></a>
+                                @endif
                                 <a href="{{ route('detalles-partida', ['id_partida' => $participacion['partida']['id']]) }}" class="btn btn-icon border-0"><i data-feather="eye"></i></a>
                             </div>
                         </div>

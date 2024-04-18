@@ -18,7 +18,8 @@
                             <ul>
                                 <li class="mt-3">
                                     <div class="ml-4">
-                                        <h4>Fecha de Inicio: <span id="fecha_inicio" class="custom-span">{{ $detalles['fecha_inicio'] }}</span>
+                                        <h4>Fecha de Inicio: <span id="fecha_inicio"
+                                                class="custom-span">{{ $detalles['fecha_inicio'] }}</span>
                                         </h4>
                                     </div>
                                 </li>
@@ -58,8 +59,6 @@
                                 </li>
                             </ul>
                         </ul>
-
-
                     </div>
 
                     <div class="col-md-8 grid-margin stretch-card">
@@ -102,10 +101,14 @@
         <div class="d-flex justify-content-around mt-4">
 
             <a href="{{ route('/') }}" class="btn btn-secondary">Cancelar</a>
-            <a class="btn btn-primary establecer-inicio" data-bs-toggle="modal"
-                data-bs-target="#editModal"data-id="{{ $detalles['fecha_inicio'] }}">
-                Programar Inicio
-            </a>
+
+            @if ($rol['id_rol'] == 1 && $numeroParticipantes>=2)
+                <a class="btn btn-primary establecer-inicio" data-bs-toggle="modal"
+                    data-bs-target="#editModal"data-id="{{ $detalles['fecha_inicio'] }}">
+                    Programar Inicio
+                </a>
+            @endif
+
 
         </div>
 
@@ -134,10 +137,10 @@
             $(document).on('click', '.establecer-inicio', function(ele) {
                 var fecha_inicio = document.getElementById("fecha_inicio").innerText;
                 var id = document.getElementById("id_partida").value;
-                
+
                 $('#Editarid').val(id);
                 $('#Editarfecha_inicio').val(fecha_inicio);
-                console.log(id+' ' +fecha_inicio);
+                console.log(id + ' ' + fecha_inicio);
             });
 
 

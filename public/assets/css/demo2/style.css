@@ -21798,7 +21798,7 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^=col-]:last-
 
 .form-control.flatpickr-input, .flatpickr-input.typeahead.tt-input,
 .flatpickr-input.typeahead.tt-hint, .select2-container--default .select2-search--dropdown .flatpickr-input.select2-search__field {
-  background-color: #0c1427;
+  background-color: #fff;
 }
 
 .flatpickr-day.selected,

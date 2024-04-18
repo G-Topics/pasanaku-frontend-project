@@ -32,8 +32,8 @@
 
                             <div class="col-md-6 mt-4">
                                 <label for="fecha_inicio">Fecha de Inicio</label>
-                                <input type="date" id="c" name="fecha_inicio" class="form-control"
-                                    required="">
+                                <input id="fecha_inicio"  name="fecha_inicio" class="form-control"
+                                required="">
                             </div>  
 
                             <div class="col-md-6 mt-4">
@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="col-md-6 mt-4">
-                                <label for="duracion_oferta">Duracion(horas)</label>
+                                <label for="duracion_oferta">Duracion de la puja(horas)</label>
                                 <input type="number" id="duracion_oferta" name="duracion_oferta" class="form-control" required="">
                             </div>
                         </div>
@@ -88,4 +88,54 @@
 
 
     </div>
+
+
+<script type="module">
+    $(function() {
+        var calendar = $("#fecha_inicio").flatpickr({
+            enableTime: true,
+            "locale": "es",
+        });
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $(document).on('click', '.programar-inicio', function() {
+            var id = document.getElementById("Editarid").value;
+            var fechaSeleccionada = calendar.selectedDates[0];
+
+
+            var fechaFormateada = fechaSeleccionada.getFullYear() + '-' +
+                ('0' + (fechaSeleccionada.getMonth() + 1)).slice(-2) + '-' +
+                ('0' + fechaSeleccionada.getDate()).slice(-2) + ' ' +
+                ('0' + fechaSeleccionada.getHours()).slice(-2) + ':' +
+                ('0' + fechaSeleccionada.getMinutes()).slice(-2) + ':' +
+                ('0' + fechaSeleccionada.getSeconds()).slice(-2);
+
+            console.log(id_partida);
+            var userURL = 'http://127.0.0.1:8000/api/partidas/actualizar-estado/' + id;
+
+            $.ajax({
+                url: userURL,
+                method: 'PUT',
+                data: {
+                    fecha_inicio: fechaFormateada,
+                    id_estado: 2
+
+                },
+                success: function(response) {
+                    console.log(response);
+                    // Aquí puedes actualizar los datos de la tabla
+                    location.reload();
+                },
+            });
+
+        });
+
+    });
+
+</script>
 @endsection

@@ -23,11 +23,12 @@ class PartidaController extends Controller
             'multa' => $request->input('multa'),
             'duracion_oferta' => $request->input('duracion_oferta'),
         ];
-        $response = Http::post('http://127.0.0.1:8000/api/partidas', $data);
+        $response = Http::post(env('URL_BACK_API').'partidas', $data);
 
         $jsonResponse = $response->json();
         $status = $jsonResponse['status'];
 
+        Log::info($jsonResponse);
 
         if ($status=='success'){
             
@@ -37,7 +38,7 @@ class PartidaController extends Controller
                 'id_rol' => 1,
                 'id_partida' => $partida,
             ];
-            $responseParticipante = Http::post('http://127.0.0.1:8000/api/participantes', $dataParticipante);
+            $responseParticipante = Http::post(env('URL_BACK_API').'participantes', $dataParticipante);
             Log::info($responseParticipante);
             
             return redirect()->route('/');       
@@ -48,14 +49,14 @@ class PartidaController extends Controller
 
     public function detalles($id)
     {
-        $consultaRol = 'http://127.0.0.1:8000/api/participante/partida-jugador/'.$id.'/'.env('USER_ID');
+        $consultaRol = env('URL_BACK_API').'participante/partida-jugador/'.$id.'/'.env('USER_ID');
         Log::info('rol: ' . $consultaRol);
         $responseRol = Http::get($consultaRol);
         $jsonResponseRol = $responseRol->json();
         Log::info('rol: ' . json_encode($jsonResponseRol));
         $rol = isset($jsonResponseRol['data']) ? $jsonResponseRol['data'] : [];
 
-        $consulta = 'http://127.0.0.1:8000/api/detalles-partida/'.$id;
+        $consulta = env('URL_BACK_API').'detalles-partida/'.$id;
     
         Log::info('respuesta: ' . $consulta);
         $response = Http::get($consulta);

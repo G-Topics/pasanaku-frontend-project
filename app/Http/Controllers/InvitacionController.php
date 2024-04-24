@@ -19,7 +19,7 @@ class InvitacionController extends Controller
             'id_participante' => $request->input('id_participante'),
             'id_partida' => $request->input('id_partida'),
         ];
-        $response = Http::post('http://127.0.0.1:8000/api/invitaciones', $data);
+        $response = Http::post(env('URL_BACK_API').'invitaciones', $data);
 
 
         $jsonResponse = $response->json();
@@ -36,7 +36,7 @@ class InvitacionController extends Controller
                 'id_invitacion' => $invitacion,
 
             ];
-            $responseParticipante = Http::post('http://127.0.0.1:8000/api/detalles_estados_invitaciones', $dataDetalleInvitacion);
+            $responseParticipante = Http::post(env('URL_BACK_API').'detalles_estados_invitaciones', $dataDetalleInvitacion);
             Log::info($responseParticipante);
 
             return redirect()->route('registrar-invitacion', ['id_partida' => $request->input('id_partida')]);
@@ -47,7 +47,7 @@ class InvitacionController extends Controller
 
     public function eliminar($id)
     {
-        $response = Http::delete('http://127.0.0.1:8000/api/invitaciones/'.$id);
+        $response = Http::delete(env('URL_BACK_API').'nvitaciones/'.$id);
         Log::info($response);
         
     }

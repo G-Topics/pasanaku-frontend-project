@@ -60,7 +60,8 @@
             var email = document.getElementById("Editaremail").value;
 
             console.log(id_partida);
-            var userURL = 'http://127.0.0.1:8000/api/invitaciones/' + id;
+            var userURL = "{{ env('URL_BACK_API')}}"+ 'invitaciones/' + id ;
+           
             
             
 
@@ -75,8 +76,7 @@
                 success: function(response) {
                             console.log(response);
                             // Aquí puedes actualizar los datos de la tabla
-                            window.location.href =
-                                "http://localhost:8001/registrar-invitacion/" + id_partida;
+                            location.reload();
                         },   
             });
 

@@ -116,7 +116,7 @@
                 ('0' + fechaSeleccionada.getSeconds()).slice(-2);
 
             console.log(id_partida);
-            var userURL = 'http://127.0.0.1:8000/api/partidas/actualizar-estado/' + id;
+            var userURL = "{{env('URL_BACK_API')}}"+'partidas/actualizar-estado/' + id;
 
             $.ajax({
                 url: userURL,

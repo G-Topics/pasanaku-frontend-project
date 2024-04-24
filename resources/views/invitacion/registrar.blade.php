@@ -157,7 +157,7 @@
             function anadirInvitacion() {
                 $.ajax({
                     type: "POST",
-                    url: 'http://127.0.0.1:8000/api/invitaciones/',
+                    url: "{{env('URL_BACK_API')}}"+'invitaciones/',
                     data: '_method=DELETE&_token=' + _token,
                     success: function(result) {
                         console.log(result);
@@ -167,7 +167,7 @@
             };
             $(document).on('click', '.delete-invitacion', function() {
                 var id = $(this).data('id');
-                var userURL = 'http://127.0.0.1:8000/api/invitaciones/' + id;
+                var userURL = "{{env('URL_BACK_API')}}"+'invitaciones/' + id;
                 var trObj = $(this);
                 var id_partida = $("#id_partida").val();
                 if (confirm("¿Está seguro de eliminar la invitación?")) {
@@ -190,7 +190,7 @@
                 var id = $(this).data('id');
                 var trObj = $(this);
                 var id_partida = $("#id_partida").val();
-                var userURL = 'http://127.0.0.1:8000/api/invitaciones/delete-partida/' + id_partida;
+                var userURL ="{{env('URL_BACK_API')}}"+'invitaciones/delete-partida/' + id_partida;
                 if (confirm("¿Está seguro de eliminar las invitaciones No enviadas y En espera?")) {
                     $.ajax({
                         url: userURL,
@@ -226,7 +226,8 @@
 
                 var id = $(this).data('id');
                 console.log(id);
-                var userURL = 'http://127.0.0.1:8000/api/invitaciones/send/' + id;
+                var userURL = "{{env('URL_BACK_API')}}"+'invitaciones/send/' + id;
+                console.log(userURL);
                 var trObj = $(this);
                 var id_partida = $("#id_partida").val();
 
@@ -250,7 +251,7 @@
 
                 var id_partida = $("#id_partida").val();
                 console.log(id_partida);
-                var userURL = 'http://127.0.0.1:8000/api/invitaciones/send-todos/' + id_partida;
+                var userURL = "{{env('URL_BACK_API')}}"+'invitaciones/send-todos/' + id_partida;
                 var trObj = $(this);
 
 

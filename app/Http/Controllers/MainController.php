@@ -11,7 +11,7 @@ class MainController extends Controller
     public function index()
     {
         // session(['user_id'=>$_ENV('USER_ID')]);
-        $consulta = 'http://127.0.0.1:8000/api/jugadores/partidas/'.env('USER_ID');
+        $consulta = env('URL_BACK_API').'jugadores/partidas/'.env('USER_ID');
 
         
         $response = Http::get($consulta);
@@ -25,7 +25,7 @@ class MainController extends Controller
 
     public function registrarPartida()
     {
-        $response = Http::get('http://127.0.0.1:8000/api/monedas');
+        $response = Http::get(env('URL_BACK_API').'monedas');
         $jsonResponse = $response->json();
         $monedas = isset($jsonResponse['data']) ? $jsonResponse['data'] : [];
         return view('partida.registrar', ['monedas' => $monedas]);
@@ -34,11 +34,11 @@ class MainController extends Controller
     public function registrarInvitacion($id_partida)
     {
         $id_participante=null;
-        $response = Http::get('http://127.0.0.1:8000/api/invitaciones/partida/'.$id_partida);
+        $response = Http::get(env('URL_BACK_API').'invitaciones/partida/'.$id_partida);
         $jsonResponse = $response->json();
         $invitaciones = isset($jsonResponse['data']) ? $jsonResponse['data'] : [];
     
-        $response = Http::get('http://127.0.0.1:8000/api/participantes');
+        $response = Http::get(env('URL_BACK_API').'participantes');
         $jsonResponse = $response->json();
         $participantes = isset($jsonResponse['data']) ? $jsonResponse['data'] : [];
 

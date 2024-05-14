@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Responsive HTML Admin Dashboard Template based on Bootstrap 5">
-	<meta name="author" content="NobleUI">
+	<meta name="author" content="PasanaKU">
 	<meta name="keywords" content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<title>Pasanaku</title>
@@ -44,7 +44,7 @@
 		<nav class="sidebar">
       <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-          Noble<span>UI</span>
+          Pasana<span>KU</span>
         </a>
         <div class="sidebar-toggler not-active">
           <span></span>
@@ -234,8 +234,7 @@
       @yield('admin')
 			<!-- partial:partials/_footer.html -->
 			<footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">
-				<p class="text-muted mb-1 mb-md-0">Copyright © 2022 <a href="https://www.nobleui.com" target="_blank">NobleUI</a>.</p>
-				<p class="text-muted">Handcrafted With <i class="mb-1 text-primary ms-1 icon-sm" data-feather="heart"></i></p>
+				<p class="text-muted mb-1 mb-md-0">Copyright © 2024 <a href="https://www.nobleui.com" target="_blank">PasanaKU</a>.</p>
 			</footer>
 			<!-- partial -->
 		

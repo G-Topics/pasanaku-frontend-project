@@ -20,15 +20,15 @@
         <div class="col-md-4 mb-4">
             <div class="card card-clickable">
                 <div class="card-body">
-                    <h4 class="card-title">Partida: {{ $participacion['partida']['nombre'] }}</h4>
-                    <p class="card-text">Descripcion: {{substr($participacion['partida']['descripcion'], 0,  30)  }} ... </p>
+                    <h4 class="card-title">Partida: {{ $participacion['nombre'] }}</h4>
+                    <p class="card-text">Descripcion: {{substr($participacion['descripcion'], 0,  30)  }} ... </p>
 
-                    <p class="card-text">Fecha de Inicio: {{ $participacion['partida']['fecha_inicio'] }}</p>
+                    <p class="card-text">Fecha de Inicio: {{ $participacion['fecha_inicio'] }}</p>
                     <div class="d-flex flex-row-reverse">
-                        @if ($participacion['id_rol']==1)
-                        <a href="{{ route('registrar-invitacion', ['id_partida' => $participacion['partida']['id']]) }}" class="btn btn-icon border-0"><i data-feather="user-plus"></i></a>
+                            @if ($participacion['id_rol']==1)
+                        <a href="{{ route('registrar-invitacion', ['id_partida' => $participacion['id']]) }}" class="btn btn-icon border-0"><i data-feather="user-plus"></i></a>
                         @endif
-                        <a href="{{ route('detalles-partida', ['id_partida' => $participacion['partida']['id']]) }}" class="btn btn-icon border-0"><i data-feather="eye"></i></a>
+                        <a href="{{ route('detalles-partida', ['id_partida' => $participacion['id']]) }}" class="btn btn-icon border-0"><i data-feather="eye"></i></a>
                     </div>
                 </div>
             </div>

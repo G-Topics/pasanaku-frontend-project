@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
 
-                <form action="" method="POST" enctype="multipart/form-data" method="POST" id="ModalForm">
+                <form action="" enctype="multipart/form-data" method="POST" id="ModalForm">
                     {{ csrf_field() }}
                     <div class="col-md-12 mb-4">
                         <input type="hidden" id="Editarid" value="">
@@ -40,7 +40,6 @@
 </div>
 
 <script type="module">
-    //type="module" is the important part
     $(function() {
         var calendar = $("#my-datepicker").flatpickr({
             inline: true,
@@ -75,8 +74,6 @@
             }
         });
 
-
-
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -86,16 +83,12 @@
         $(document).on('click', '.programar-inicio', function() {
             var id = document.getElementById("Editarid").value;
             var fechaSeleccionada = calendar.selectedDates[0];
-
-
             var fechaFormateada = fechaSeleccionada.getFullYear() + '-' +
                 ('0' + (fechaSeleccionada.getMonth() + 1)).slice(-2) + '-' +
                 ('0' + fechaSeleccionada.getDate()).slice(-2) + ' ' +
                 ('0' + fechaSeleccionada.getHours()).slice(-2) + ':' +
                 ('0' + fechaSeleccionada.getMinutes()).slice(-2) + ':' +
                 ('0' + fechaSeleccionada.getSeconds()).slice(-2);
-
-            console.log(id_partida);
             var userURL = "{{env('URL_BACK_API')}}"+'partidas/actualizar-estado/' + id;
 
             $.ajax({
@@ -104,11 +97,9 @@
                 data: {
                     fecha_inicio: fechaFormateada,
                     id_estado: 2
-
                 },
                 success: function(response) {
                     console.log(response);
-                    // Aquí puedes actualizar los datos de la tabla
                     location.reload();
                 },
             });
